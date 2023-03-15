@@ -163,6 +163,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "Помахай":
                     sendMessage(chatId, EmojiParser.parseToUnicode(":wave:"));
                     break;
+                case "У меня все получиться!":
+                    sendMessage(chatId, "У тебя все получиться!" + EmojiParser.parseToUnicode(":fire:"));
+                    break;
             }
         } else if (update.hasCallbackQuery()){
             String callbackData = update.getCallbackQuery().getData();
