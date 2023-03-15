@@ -223,12 +223,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         keyboardMarkup.setKeyboard(keyboardRows);
         message.setReplyMarkup(keyboardMarkup);
-        try{
-            execute(message);
-        }
-        catch (TelegramApiException exception){
-            System.out.println("!!!!!!Telegram exception in telegram bot!!!!!!");
-        }
+
+        executionMessage(message);
     }
 
     private void whatsUp(long chatId){
@@ -260,6 +256,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         markup.setKeyboard(rowsInLine);
         message.setReplyMarkup(markup);
+
+        executionMessage(message);
+    }
+
+    private void executionMessage(SendMessage message){
         try{
             execute(message);
         }
